@@ -32,7 +32,7 @@ fn mzd_to_vecs(mzd: &ptr::NonNull<Mzd>) -> Vec<Vob> {
 #[cfg_attr(feature = "serde", derive(Serialize))]
 pub struct BinMatrix {
     #[cfg_attr(feature = "serde", serde(with = "MzdSerializer", rename = "matrix"))]
-    mzd: ptr::NonNull<Mzd>,
+    pub mzd: ptr::NonNull<Mzd>,
 }
 
 unsafe impl Sync for BinMatrix {}
