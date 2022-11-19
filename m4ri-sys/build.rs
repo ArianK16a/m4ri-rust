@@ -43,7 +43,7 @@ fn main() -> io::Result<()> {
             .arg("--enable-static")
             .arg("--enable-thread-safe")
             .arg("--disable-png")
-            .env("CFLAGS", "-Ofast -fPIC")
+            .env("CFLAGS", "-Ofast -funroll-loops -march=native -frename-registers -fPIC")
             .current_dir(&out_dir)
             .status()
             .expect("Failed to execute ./configure");
